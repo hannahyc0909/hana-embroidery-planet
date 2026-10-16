@@ -907,20 +907,16 @@
   <!-- 頂部導覽列 -->
   <header class="site-header">
     <div class="nav-container">
-      <a href="index.html" class="brand-area">
+      <div class="brand-area">
         <img src="images/logo.png" alt="哈拿的刺繡星球 Logo" class="brand-logo-img">
         <div class="brand-text">
           <h1>哈拿的刺繡星球</h1>
           <p>手工刺繡・客製配件・追星選品</p>
         </div>
-      </a>
+      </div>
 
-      <!-- 導覽頁面切換與社群連結 (桌面版) -->
+      <!-- 社群連結 (桌面版) -->
       <div class="nav-right-group desktop-only">
-        <nav class="nav-menu">
-          <a href="index.html" class="nav-link active">🪐 品牌介紹</a>
-          <a href="products.html" class="nav-link">🛍️ 商品選品</a>
-        </nav>
 
         <a id="nav-ig-link" href="https://instagram.com/" target="_blank" class="social-btn ig" title="追蹤我們的 Instagram">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -949,16 +945,6 @@
         </a>
       </div>
     </div>
-
-    <!-- 手機版頁面導覽分頁條 -->
-    <div class="mobile-subnav mobile-only">
-      <a href="index.html" class="mobile-subnav-link active">
-        <span>🪐</span> 品牌介紹
-      </a>
-      <a href="products.html" class="mobile-subnav-link">
-        <span>🛍️</span> 商品選品
-      </a>
-    </div>
   </header>
 
   <!-- 主內容區 -->
@@ -976,11 +962,11 @@
         每一件作品都凝聚著細膩針線與手作溫度，希望能為您的日常生活或喜愛的偶像應援增添一份獨一無二的專屬心意。
       </p>
       <div class="hero-action-btns">
-        <a href="products.html" class="hero-btn-primary">
-          <span>🛍️ 前往商品選品（瀏覽全部） →</span>
+        <a id="hero-ig-link" href="https://instagram.com/" target="_blank" class="hero-btn-primary">
+          <span>📷 追蹤 Instagram 實拍作品</span>
         </a>
-        <a id="hero-ig-link" href="https://instagram.com/" target="_blank" class="hero-btn-secondary">
-          <span>📷 追蹤 Instagram 實拍</span>
+        <a id="hero-line-link" href="https://line.me/" target="_blank" class="hero-btn-secondary">
+          <span>💬 私訊 LINE 討論客製</span>
         </a>
       </div>
     </section>
@@ -1012,7 +998,7 @@
           <div class="step-num">1</div>
           <div class="step-info">
             <h3>挑選商品或提供客製想法</h3>
-            <p>在網站「<a href="products.html" style="text-decoration:underline; font-weight:700; color:#c2410c;">商品選品</a>」中截圖喜歡的現貨款式；若需客製，可準備喜歡的圖案、照片或配色想法。</p>
+            <p>在「商品選品」專區中截圖喜歡的現貨款式；若需客製，可準備喜歡的圖案、照片或配色想法。</p>
           </div>
         </div>
         <div class="step-item">
@@ -1067,11 +1053,11 @@
       <h2>心動了嗎？歡迎前往選品或私訊聊聊 ✨</h2>
       <p>挑選心儀的現貨小物，或與店長討論獨一無二的客製化刺繡訂製！</p>
       <div class="cta-btns">
-        <a href="products.html" class="btn-cta-white">
-          <span>🛍️ 前往「商品選品」專區</span>
-        </a>
-        <a id="cta-ig-link" href="https://instagram.com/" target="_blank" class="btn-cta-ghost">
+        <a id="cta-ig-link" href="https://instagram.com/" target="_blank" class="btn-cta-white">
           <span>📷 私訊 Instagram 小盒子</span>
+        </a>
+        <a id="cta-line-link" href="https://line.me/" target="_blank" class="btn-cta-ghost">
+          <span>💬 加入 LINE 客服詢價</span>
         </a>
       </div>
     </section>
@@ -1129,7 +1115,9 @@
     updateLink('footer-line-link', BRAND_CONFIG.lineUrl);
 
     updateLink('hero-ig-link', BRAND_CONFIG.instagramUrl);
+    updateLink('hero-line-link', BRAND_CONFIG.lineUrl);
     updateLink('cta-ig-link', BRAND_CONFIG.instagramUrl);
+    updateLink('cta-line-link', BRAND_CONFIG.lineUrl);
   </script>
 </body>
 </html>
