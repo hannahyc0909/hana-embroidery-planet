@@ -47,6 +47,13 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     body {
@@ -68,17 +75,18 @@
     .announcement-bar {
       background: linear-gradient(90deg, #fcefe8, #fdf4f0);
       color: #9c5c42;
-      font-size: 13px;
-      padding: 8px 16px;
+      font-size: 12.5px;
+      padding: 8px 14px;
       text-align: center;
       font-weight: 500;
       border-bottom: 1px solid rgba(224, 122, 95, 0.15);
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
+      line-height: 1.45;
     }
 
     /* === 頂部導覽列 === */
     .site-header {
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
@@ -86,42 +94,31 @@
       top: 0;
       z-index: 50;
       transition: all 0.3s ease;
+      width: 100%;
     }
 
     .nav-container {
       max-width: var(--site-max-width);
       width: 100%;
       margin: 0 auto;
-      padding: 14px 24px;
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
 
     .brand-area {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       cursor: pointer;
-    }
-
-    .brand-logo-icon {
-      width: 44px;
-      height: 44px;
-      background: #fbf0ea;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid #fae1d6;
+      min-width: 0;
     }
 
     .brand-logo-img {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 2px 8px rgba(92, 64, 51, 0.12);
@@ -136,30 +133,42 @@
       box-shadow: 0 4px 12px rgba(92, 64, 51, 0.18);
     }
 
+    .brand-text {
+      min-width: 0;
+    }
+
     .brand-text h1 {
-      font-size: 21px;
+      font-size: 19px;
       font-weight: 700;
       letter-spacing: -0.3px;
       color: #2e2621;
       line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .brand-text p {
-      font-size: 12px;
+      font-size: 11.5px;
       color: var(--text-muted);
       margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
+    /* 桌面版導覽群組 */
     .nav-right-group {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      flex-shrink: 0;
     }
 
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .nav-link {
@@ -172,6 +181,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
     }
 
     .nav-link:hover {
@@ -184,40 +194,157 @@
       color: #ffffff;
     }
 
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .social-btn.ig {
+      background: #fdf2f4;
+      color: #d82b6b;
+      border-color: #fbd6df;
+    }
+    .social-btn.ig:hover { background: #fae1e7; }
+
+    .social-btn.threads {
+      background: #f4f4f5;
+      color: #18181b;
+      border-color: #e4e4e7;
+    }
+    .social-btn.threads:hover { background: #e4e4e7; color: #000000; }
+
+    .social-btn.line {
+      background: #f0fdf4;
+      color: #16a34a;
+      border-color: #dcfce7;
+    }
+    .social-btn.line:hover { background: #dcfce7; }
+
+    .social-btn svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
+    /* 手機版頂部右側社群按鈕 */
+    .mobile-header-social {
+      display: none;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mob-social-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+      border: 1px solid transparent;
+      flex-shrink: 0;
+    }
+    .mob-social-btn:hover { transform: scale(1.08); }
+    .mob-social-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .mob-social-btn.ig {
+      background: #fdf2f4;
+      color: #d82b6b;
+      border-color: #fbd6df;
+    }
+    .mob-social-btn.threads {
+      background: #f4f4f5;
+      color: #18181b;
+      border-color: #e4e4e7;
+    }
+    .mob-social-btn.line {
+      background: #f0fdf4;
+      color: #16a34a;
+      border-color: #dcfce7;
+    }
+
+    /* 手機版次級分頁導覽列 (Sticky tabs) */
+    .mobile-subnav {
+      display: none;
+      background: #ffffff;
+      border-top: 1px solid #f2ede6;
+      padding: 6px 14px 8px;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .mobile-subnav-link {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #61564f;
+      background: #f7f4ef;
+      transition: all 0.2s ease;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .mobile-subnav-link.active {
+      background: #2e2621;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(46, 38, 33, 0.16);
+    }
+
     /* === 控制欄（搜尋、最愛、分類與價格篩選） === */
     .controls-container {
       max-width: var(--site-max-width);
       width: 100%;
-      margin: 24px auto 20px;
-      padding: 0 24px;
+      margin: 16px auto 14px;
+      padding: 0 14px;
+    }
+
+    @media (min-width: 769px) {
+      .controls-container {
+        margin: 24px auto 20px;
+        padding: 0 24px;
+      }
     }
 
     .search-filter-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .search-box {
       position: relative;
       flex: 1;
-      min-width: 260px;
-      max-width: 420px;
+      min-width: 0;
     }
 
     .search-input {
       width: 100%;
-      padding: 11px 16px 11px 40px;
-      border-radius: 24px;
+      height: 42px;
+      padding: 0 14px 0 38px;
+      border-radius: 22px;
       border: 1px solid var(--border-color);
       background: #ffffff;
-      font-size: 14px;
+      font-size: 16px; /* 16px prevents iOS auto zoom */
       color: var(--text-main);
       outline: none;
       transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
     }
 
     .search-input:focus {
@@ -235,17 +362,21 @@
     }
 
     .fav-filter-btn {
-      padding: 8px 16px;
+      height: 42px;
+      padding: 0 14px;
       background: #ffffff;
       border: 1px solid #fecdd3;
-      border-radius: 20px;
+      border-radius: 22px;
       cursor: pointer;
       font-size: 13px;
       font-weight: 600;
       color: #e11d48;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
       transition: all 0.2s ease;
     }
     .fav-filter-btn:hover { background: #fff1f2; }
@@ -253,27 +384,31 @@
       background: #e11d48;
       color: #ffffff;
       border-color: #e11d48;
-      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+      box-shadow: 0 3px 10px rgba(225, 29, 72, 0.25);
     }
 
-    /* 分類導覽列 */
+    /* 分類導覽列 - 手機版橫向滑動 */
     .category-filter-bar {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 12px;
-      padding-bottom: 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 2px 0 8px;
+      margin-bottom: 6px;
+    }
+    .category-filter-bar::-webkit-scrollbar {
+      display: none;
     }
 
     .category-nav {
       display: flex;
       gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
+      flex-wrap: nowrap;
     }
 
     .cat-btn {
-      padding: 7px 18px;
+      padding: 6px 16px;
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: 20px;
@@ -281,6 +416,8 @@
       font-size: 13px;
       font-weight: 500;
       color: #52525b;
+      white-space: nowrap;
+      flex-shrink: 0;
       transition: all 0.2s ease;
     }
     .cat-btn:hover { background: #f7f4f0; border-color: #d4cdc5; }
@@ -289,39 +426,52 @@
       color: #ffffff;
       border-color: #2e2621;
       font-weight: 600;
-      box-shadow: 0 2px 8px rgba(46, 38, 33, 0.2);
+      box-shadow: 0 2px 8px rgba(46, 38, 33, 0.16);
     }
 
     /* === 價格區間篩選區塊 === */
     .price-filter-bar {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding-top: 12px;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 10px;
       margin-top: 4px;
       border-top: 1px dashed #ede8e1;
+    }
+    @media (min-width: 769px) {
+      .price-filter-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
 
     .price-pills-nav {
       display: flex;
-      gap: 7px;
-      flex-wrap: wrap;
       align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      white-space: nowrap;
+    }
+    .price-pills-nav::-webkit-scrollbar {
+      display: none;
     }
 
     .filter-label {
       font-size: 12px;
       font-weight: 600;
       color: #716358;
+      flex-shrink: 0;
     }
 
     .price-btn {
-      padding: 5px 13px;
+      flex-shrink: 0;
+      padding: 5px 12px;
       background: #ffffff;
       border: 1px solid var(--border-color);
-      border-radius: 18px;
+      border-radius: 16px;
       cursor: pointer;
       font-size: 12px;
       font-weight: 500;
@@ -335,7 +485,7 @@
       color: #ffffff;
       border-color: #c2410c;
       font-weight: 600;
-      box-shadow: 0 2px 6px rgba(194, 65, 12, 0.25);
+      box-shadow: 0 2px 6px rgba(194, 65, 12, 0.2);
     }
 
     /* 自訂價格區間輸入框群組 */
@@ -347,13 +497,17 @@
       padding: 4px 10px;
       border: 1px solid var(--border-color);
       border-radius: 18px;
+      width: 100%;
+      max-width: 280px;
     }
 
     .custom-price-input {
-      width: 70px;
+      width: 65px;
+      flex: 1;
+      min-width: 0;
       border: none;
       outline: none;
-      font-size: 12px;
+      font-size: 13px;
       color: var(--text-main);
       background: transparent;
       text-align: center;
@@ -361,18 +515,20 @@
 
     .custom-price-input::placeholder {
       color: var(--text-light);
+      font-size: 12px;
     }
 
     .custom-price-btn {
       background: #2e2621;
       color: #ffffff;
       border: none;
-      padding: 3px 10px;
+      padding: 4px 12px;
       border-radius: 12px;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 600;
       cursor: pointer;
       transition: background 0.2s ease;
+      flex-shrink: 0;
     }
     .custom-price-btn:hover { background: #c2410c; }
 
@@ -380,11 +536,28 @@
     .product-grid {
       max-width: var(--site-max-width);
       width: 100%;
-      margin: 0 auto 60px;
-      padding: 0 24px;
+      margin: 0 auto 50px;
+      padding: 0 12px;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 24px;
+        padding: 0 24px;
+        margin-bottom: 60px;
+      }
     }
 
     .product-card {
@@ -400,7 +573,7 @@
       position: relative;
     }
     .product-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       box-shadow: var(--shadow-md);
       border-color: #ded8ce;
     }
@@ -424,44 +597,50 @@
 
     .fav-btn {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 8px;
+      right: 8px;
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(4px);
       border: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 14px;
       z-index: 10;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
     .fav-btn:hover { transform: scale(1.12); background: #ffffff; }
     .fav-btn.active { color: #e11d48; }
 
     .product-info {
-      padding: 16px;
+      padding: 10px 10px 12px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
+    }
+    @media (min-width: 640px) {
+      .product-info {
+        padding: 16px;
+      }
     }
 
     .tag-category-row {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 8px;
+      gap: 4px;
+      margin-bottom: 6px;
       flex-wrap: wrap;
     }
 
     .tag {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
-      padding: 3px 8px;
+      padding: 2px 6px;
       border-radius: 4px;
     }
     .tag-new { background: #fef3c7; color: #92400e; }
@@ -470,40 +649,51 @@
     .tag-default { background: #f3f4f6; color: #4b5563; }
 
     .category-label {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-light);
       background: #f4f2ee;
-      padding: 2px 7px;
+      padding: 2px 6px;
       border-radius: 4px;
     }
 
     .product-title {
-      font-size: 16px;
+      font-size: 13.5px;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       color: #27272a;
+      line-height: 1.35;
       display: -webkit-box;
-      display: box;
       -webkit-line-clamp: 1;
       line-clamp: 1;
       -webkit-box-orient: vertical;
-      box-orient: vertical;
       overflow: hidden;
+    }
+    @media (min-width: 640px) {
+      .product-title {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
     }
 
     .product-desc {
-      font-size: 13px;
+      font-size: 11.5px;
       color: var(--text-muted);
-      margin-bottom: 14px;
-      line-height: 1.5;
+      margin-bottom: 8px;
+      line-height: 1.45;
       display: -webkit-box;
-      display: box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
       -webkit-box-orient: vertical;
-      box-orient: vertical;
       overflow: hidden;
-      min-height: 38px;
+    }
+    @media (min-width: 640px) {
+      .product-desc {
+        font-size: 13px;
+        margin-bottom: 14px;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        min-height: 38px;
+      }
     }
 
     .price-action-row {
@@ -511,40 +701,60 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
+      gap: 6px;
     }
 
     .product-price {
       font-weight: 700;
       color: #c2410c;
-      font-size: 18px;
+      font-size: 15px;
       display: flex;
       align-items: baseline;
       gap: 2px;
+      white-space: nowrap;
     }
-    .price-currency { font-size: 12px; }
+    @media (min-width: 640px) {
+      .product-price {
+        font-size: 18px;
+      }
+    }
+
+    .price-currency { font-size: 11px; }
 
     .action-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 4px;
       background: #2e2621;
       color: #ffffff;
-      padding: 8px 14px;
+      padding: 6px 10px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 11.5px;
       font-weight: 600;
       transition: all 0.2s ease;
       white-space: nowrap;
       cursor: pointer;
       border: none;
     }
+    @media (min-width: 640px) {
+      .action-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+    }
     .action-btn:hover { background: #4a3d35; }
     .action-btn.favorited {
       background: #fff1f2;
       color: #e11d48;
       border: 1px solid #fecdd3;
+    }
+
+    .btn-text-short { display: inline; }
+    .btn-text-full { display: none; }
+    @media (min-width: 640px) {
+      .btn-text-short { display: none; }
+      .btn-text-full { display: inline; }
     }
 
     .status-msg {
@@ -562,9 +772,15 @@
     #detail-view {
       display: none;
       max-width: 1040px;
-      margin: 16px auto 60px;
-      padding: 0 24px;
+      margin: 12px auto 50px;
+      padding: 0 12px;
       width: 100%;
+    }
+    @media (min-width: 769px) {
+      #detail-view {
+        margin: 16px auto 60px;
+        padding: 0 24px;
+      }
     }
 
     .detail-card {
@@ -576,18 +792,23 @@
     }
 
     .detail-top-nav {
-      padding: 16px 24px;
+      padding: 12px 16px;
       border-bottom: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: #faf8f5;
     }
+    @media (min-width: 769px) {
+      .detail-top-nav {
+        padding: 16px 24px;
+      }
+    }
 
     .back-btn {
       background: transparent;
       border: none;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
       color: #52525b;
       cursor: pointer;
@@ -600,7 +821,7 @@
     .back-btn:hover { background: #ede8e1; }
 
     .detail-content { display: flex; flex-direction: column; }
-    @media (min-width: 768px) { .detail-content { flex-direction: row; } }
+    @media (min-width: 769px) { .detail-content { flex-direction: row; } }
 
     .detail-img-box {
       flex: 1.1;
@@ -613,57 +834,72 @@
 
     .detail-info-box {
       flex: 1;
-      padding: 36px 32px;
+      padding: 22px 18px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
+    @media (min-width: 769px) {
+      .detail-info-box {
+        padding: 36px 32px;
+      }
+    }
 
     .detail-heading h1 {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 700;
       color: #27272a;
-      margin: 10px 0 8px;
+      margin: 8px 0 6px;
+      line-height: 1.3;
+    }
+    @media (min-width: 769px) {
+      .detail-heading h1 {
+        font-size: 24px;
+        margin: 10px 0 8px;
+      }
     }
 
     .detail-desc {
-      font-size: 14px;
+      font-size: 13.5px;
       color: #52525b;
       line-height: 1.7;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       white-space: pre-line;
     }
 
     .detail-price-box {
-      padding: 14px 18px;
+      padding: 12px 16px;
       background: #faf8f5;
       border-radius: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .detail-price-val { font-size: 26px; font-weight: 800; color: #c2410c; }
+    .detail-price-val { font-size: 22px; font-weight: 800; color: #c2410c; }
+    @media (min-width: 769px) {
+      .detail-price-val { font-size: 26px; }
+    }
 
     .order-tips-box {
       background: #fcf6ee;
       border: 1px solid #fae6cb;
-      padding: 14px 16px;
+      padding: 12px 14px;
       border-radius: 10px;
       font-size: 12px;
       color: #8c5825;
       line-height: 1.6;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
-    .order-tips-box strong { display: block; margin-bottom: 4px; font-size: 13px; }
+    .order-tips-box strong { display: block; margin-bottom: 4px; font-size: 12.5px; }
 
-    .detail-cta-row { display: flex; gap: 12px; flex-direction: column; }
+    .detail-cta-row { display: flex; gap: 10px; flex-direction: column; }
     .cta-primary {
       background: #2e2621;
       color: #ffffff;
-      padding: 14px 20px;
+      padding: 13px 18px;
       border-radius: 10px;
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 700;
       text-align: center;
       display: flex;
@@ -672,6 +908,7 @@
       gap: 8px;
       cursor: pointer;
       border: none;
+      transition: all 0.2s ease;
     }
     .cta-primary:hover { background: #4a3d35; }
     .cta-primary.favorited {
@@ -680,35 +917,116 @@
       border: 1px solid #fecdd3;
     }
 
+    .cta-inquire {
+      background: #fdf2f4;
+      color: #d82b6b;
+      border: 1px solid #fbd6df;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .cta-inquire:hover { background: #fae1e7; }
+
     /* === 頁尾 Footer === */
     .site-footer {
       margin-top: auto;
       background: #ffffff;
       border-top: 1px solid var(--border-color);
-      padding: 40px 24px 30px;
+      padding: 30px 24px 24px;
     }
     .footer-content {
       max-width: var(--site-max-width);
       width: 100%;
       margin: 0 auto;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      gap: 16px;
+    }
+    .footer-social-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .footer-copy {
       width: 100%;
       text-align: center;
+      padding-top: 16px;
+      border-top: 1px solid #f2ede6;
       font-size: 12px;
       color: var(--text-light);
+    }
+
+    /* === 響應式優化 === */
+    @media (min-width: 769px) {
+      .mobile-only {
+        display: none !important;
+      }
+      .desktop-only {
+        display: flex !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .desktop-only {
+        display: none !important;
+      }
+
+      .mobile-only {
+        display: flex !important;
+      }
+
+      .nav-container {
+        padding: 10px 14px;
+        gap: 8px;
+      }
+
+      .brand-logo-img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .brand-text h1 {
+        font-size: 15.5px;
+      }
+
+      .brand-text p {
+        font-size: 10px;
+      }
+
+      .site-footer {
+        padding: 24px 16px 20px;
+      }
+
+      .footer-social-links {
+        gap: 8px;
+      }
+
+      .footer-social-links .social-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- 公告小跑馬燈 -->
   <div class="announcement-bar">
     🧵 每一針都是用心手作・追星小物與客製刺繡選品｜歡迎加入最愛 ✨
   </div>
 
+  <!-- 頂部導覽列 -->
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand-area">
@@ -718,12 +1036,50 @@
           <p>手工刺繡・客製配件・追星選品</p>
         </div>
       </a>
-      <div class="nav-right-group">
+
+      <!-- 導覽頁面切換與社群連結 (桌面版) -->
+      <div class="nav-right-group desktop-only">
         <nav class="nav-menu">
-          <a href="index.html" class="nav-link">品牌介紹</a>
-          <a href="products.html" class="nav-link active">商品選品</a>
+          <a href="index.html" class="nav-link">🪐 品牌介紹</a>
+          <a href="products.html" class="nav-link active">🛍️ 商品選品</a>
         </nav>
+
+        <a id="nav-ig-link" href="https://instagram.com/" target="_blank" class="social-btn ig" title="追蹤我們的 Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a id="nav-threads-link" href="https://www.threads.net/" target="_blank" class="social-btn threads" title="追蹤我們的 Threads">
+          <svg viewBox="0 0 24 24"><path d="M18.263 11.097c-.03-3.486-1.92-5.586-5.111-5.586-2.13 0-3.922.963-4.863 2.499l2.062 1.438c.535-.843 1.272-1.543 2.628-1.543 1.528 0 2.318.85 2.544 2.431a15 15 0 0 0-2.236-.173c-4.125 0-6.068 1.867-6.068 4.336s1.943 3.99 4.804 3.99c3.139 0 5.013-2.115 5.781-4.735.798.361 1.348 1.204 1.348 2.47 0 3.387-3.907 5.232-7.22 5.232-4.885 0-8.077-3.207-8.077-8.424 0-6.392 4.223-10.487 9.9-10.487 3.808 0 5.69 1.671 6.97 3.914l2.108-1.475C21.44 2.078 18.331 0 13.663 0 6.227 0 1.168 5.277 1.168 12.934c0 7 4.953 11.066 10.856 11.066 4.878 0 9.809-2.846 9.809-7.716 0-2.545-1.46-4.231-3.569-5.187m-6.33 4.855c-1.077 0-2.026-.512-2.026-1.453 0-1.483 1.822-1.934 3.606-1.934.678 0 1.34.045 1.927.173-.422 1.927-1.671 3.215-3.508 3.214Z"/></svg>
+          <span>Threads</span>
+        </a>
+        <a id="nav-line-link" href="https://line.me/" target="_blank" class="social-btn line" title="加入 LINE 詢問">
+          <svg viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.019 9.608.391.084.922.258 1.057.592.121.303.079.777.039 1.085l-.171 1.026c-.053.303-.243 1.185 1.039.646 1.281-.539 6.918-4.077 9.444-6.982 1.745-1.921 2.573-3.874 2.573-5.975z"/></svg>
+          <span>LINE 客服</span>
+        </a>
       </div>
+
+      <!-- 手機版頂部右側社群按鈕 -->
+      <div class="mobile-header-social mobile-only">
+        <a id="mob-nav-ig-link" href="https://instagram.com/" target="_blank" class="mob-social-btn ig" title="追蹤 Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a id="mob-nav-threads-link" href="https://www.threads.net/" target="_blank" class="mob-social-btn threads" title="追蹤 Threads">
+          <svg viewBox="0 0 24 24"><path d="M18.263 11.097c-.03-3.486-1.92-5.586-5.111-5.586-2.13 0-3.922.963-4.863 2.499l2.062 1.438c.535-.843 1.272-1.543 2.628-1.543 1.528 0 2.318.85 2.544 2.431a15 15 0 0 0-2.236-.173c-4.125 0-6.068 1.867-6.068 4.336s1.943 3.99 4.804 3.99c3.139 0 5.013-2.115 5.781-4.735.798.361 1.348 1.204 1.348 2.47 0 3.387-3.907 5.232-7.22 5.232-4.885 0-8.077-3.207-8.077-8.424 0-6.392 4.223-10.487 9.9-10.487 3.808 0 5.69 1.671 6.97 3.914l2.108-1.475C21.44 2.078 18.331 0 13.663 0 6.227 0 1.168 5.277 1.168 12.934c0 7 4.953 11.066 10.856 11.066 4.878 0 9.809-2.846 9.809-7.716 0-2.545-1.46-4.231-3.569-5.187m-6.33 4.855c-1.077 0-2.026-.512-2.026-1.453 0-1.483 1.822-1.934 3.606-1.934.678 0 1.34.045 1.927.173-.422 1.927-1.671 3.215-3.508 3.214Z"/></svg>
+        </a>
+        <a id="mob-nav-line-link" href="https://line.me/" target="_blank" class="mob-social-btn line" title="加入 LINE 詢問">
+          <svg viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.019 9.608.391.084.922.258 1.057.592.121.303.079.777.039 1.085l-.171 1.026c-.053.303-.243 1.185 1.039.646 1.281-.539 6.918-4.077 9.444-6.982 1.745-1.921 2.573-3.874 2.573-5.975z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 手機版頁面導覽分頁條 -->
+    <div class="mobile-subnav mobile-only">
+      <a href="index.html" class="mobile-subnav-link">
+        <span>🪐</span> 品牌介紹
+      </a>
+      <a href="products.html" class="mobile-subnav-link active">
+        <span>🛍️</span> 商品選品
+      </a>
     </div>
   </header>
 
@@ -741,9 +1097,11 @@
 
         <div class="right-tools-group">
           <!-- 我的最愛按鈕 -->
-          <button id="toggle-fav-view" class="fav-filter-btn">
+          <button id="toggle-fav-view" class="fav-filter-btn" title="切換查看我的最愛">
             <span>❤️</span>
-            <span id="fav-btn-label">我的最愛 (0)</span>
+            <span class="btn-text-full">我的最愛</span>
+            <span class="btn-text-short">最愛</span>
+            <span id="fav-count">(0)</span>
           </button>
         </div>
       </div>
@@ -803,6 +1161,20 @@
 
   <footer class="site-footer">
     <div class="footer-content">
+      <div class="footer-social-links">
+        <a id="footer-ig-link" href="https://instagram.com/" target="_blank" class="social-btn ig" title="追蹤 Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a id="footer-threads-link" href="https://www.threads.net/" target="_blank" class="social-btn threads" title="追蹤 Threads">
+          <svg viewBox="0 0 24 24"><path d="M18.263 11.097c-.03-3.486-1.92-5.586-5.111-5.586-2.13 0-3.922.963-4.863 2.499l2.062 1.438c.535-.843 1.272-1.543 2.628-1.543 1.528 0 2.318.85 2.544 2.431a15 15 0 0 0-2.236-.173c-4.125 0-6.068 1.867-6.068 4.336s1.943 3.99 4.804 3.99c3.139 0 5.013-2.115 5.781-4.735.798.361 1.348 1.204 1.348 2.47 0 3.387-3.907 5.232-7.22 5.232-4.885 0-8.077-3.207-8.077-8.424 0-6.392 4.223-10.487 9.9-10.487 3.808 0 5.69 1.671 6.97 3.914l2.108-1.475C21.44 2.078 18.331 0 13.663 0 6.227 0 1.168 5.277 1.168 12.934c0 7 4.953 11.066 10.856 11.066 4.878 0 9.809-2.846 9.809-7.716 0-2.545-1.46-4.231-3.569-5.187m-6.33 4.855c-1.077 0-2.026-.512-2.026-1.453 0-1.483 1.822-1.934 3.606-1.934.678 0 1.34.045 1.927.173-.422 1.927-1.671 3.215-3.508 3.214Z"/></svg>
+          <span>Threads</span>
+        </a>
+        <a id="footer-line-link" href="https://line.me/" target="_blank" class="social-btn line" title="加入 LINE 詢問">
+          <svg viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.019 9.608.391.084.922.258 1.057.592.121.303.079.777.039 1.085l-.171 1.026c-.053.303-.243 1.185 1.039.646 1.281-.539 6.918-4.077 9.444-6.982 1.745-1.921 2.573-3.874 2.573-5.975z"/></svg>
+          <span>LINE 客服</span>
+        </a>
+      </div>
       <div class="footer-copy">
         © 2026 哈拿的刺繡星球. All rights reserved.
       </div>
@@ -929,7 +1301,12 @@
 
     function updateFavCountBadge() {
       const favs = getFavorites();
-      if (favBtnLabel) favBtnLabel.innerText = `我的最愛 (${favs.length})`;
+      const countEl = document.getElementById('fav-count');
+      if (countEl) {
+        countEl.innerText = `(${favs.length})`;
+      } else if (favBtnLabel) {
+        favBtnLabel.innerText = `我的最愛 (${favs.length})`;
+      }
     }
 
     window.toggleFavorite = function(event, productId, fromDetail = false) {
@@ -1022,8 +1399,10 @@
               <p class="product-desc">${product.desc || ''}</p>
               <div class="price-action-row">
                 <div class="product-price">${priceHtml}</div>
-                <button class="action-btn ${isFav ? 'favorited' : ''}" onclick="toggleFavorite(event, '${product.id}')">
-                  ${isFav ? '❤️ 已加入最愛' : '🤍 加入最愛'}
+                <button class="action-btn ${isFav ? 'favorited' : ''}" onclick="toggleFavorite(event, '${product.id}')" title="${isFav ? '已加入最愛' : '加入最愛'}">
+                  <span>${isFav ? '❤️' : '🤍'}</span>
+                  <span class="btn-text-full">${isFav ? '已加入最愛' : '加入最愛'}</span>
+                  <span class="btn-text-short">${isFav ? '已加入' : '收藏'}</span>
                 </button>
               </div>
             </div>
@@ -1055,7 +1434,7 @@
         <div class="detail-content">
           <div class="detail-img-box">
             <img src="${imgUrl}" alt="${product.title || ''}" onerror="handleImageError(this)">
-            <button class="fav-btn ${isFav ? 'active' : ''}" style="top:16px; right:16px; width:44px; height:44px; font-size:20px;" onclick="toggleFavorite(event, '${product.id}', true)">
+            <button class="fav-btn ${isFav ? 'active' : ''}" style="top:12px; right:12px; width:40px; height:40px; font-size:18px;" onclick="toggleFavorite(event, '${product.id}', true)">
               ${isFav ? '❤️' : '🤍'}
             </button>
           </div>
@@ -1073,13 +1452,16 @@
               <div class="detail-price-val">${priceHtml}</div>
             </div>
             <div class="order-tips-box">
-              <strong>💡 最愛提示</strong>
-              點擊下方按鈕即可將此商品加入您的專屬最愛清單隨時查看！
+              <strong>💡 訂購與詢價說明</strong>
+              每一件作品皆為用心手作刺繡。可點擊下方按鈕加入最愛清單隨時查看，或直接私訊 Instagram 小盒子向店長訂購與詢問現貨！
             </div>
             <div class="detail-cta-row">
               <button class="cta-primary ${isFav ? 'favorited' : ''}" onclick="toggleFavorite(event, '${product.id}', true)">
-                ${isFav ? '❤️ 已加入最愛' : '🤍 加入最愛'}
+                ${isFav ? '❤️ 已在我的最愛清單中' : '🤍 加入我的最愛'}
               </button>
+              <a href="${BRAND_CONFIG.instagramUrl}" target="_blank" class="cta-inquire">
+                💬 私訊 Instagram 詢問或訂購
+              </a>
             </div>
           </div>
         </div>
@@ -1110,6 +1492,33 @@
         }
       });
     }
+
+    // 品牌與社群基本設定
+    const BRAND_CONFIG = {
+      brandName: "哈拿的刺繡星球",
+      brandSubtitle: "手工刺繡・客製配件・追星選品",
+      instagramUrl: "https://instagram.com/",
+      threadsUrl: "https://www.threads.net/",
+      lineUrl: "https://line.me/",
+    };
+
+    const updateLink = (id, url) => {
+      const el = document.getElementById(id);
+      if (el && url) el.href = url;
+    };
+
+    // 套用社群超連結
+    updateLink('nav-ig-link', BRAND_CONFIG.instagramUrl);
+    updateLink('nav-threads-link', BRAND_CONFIG.threadsUrl);
+    updateLink('nav-line-link', BRAND_CONFIG.lineUrl);
+
+    updateLink('mob-nav-ig-link', BRAND_CONFIG.instagramUrl);
+    updateLink('mob-nav-threads-link', BRAND_CONFIG.threadsUrl);
+    updateLink('mob-nav-line-link', BRAND_CONFIG.lineUrl);
+
+    updateLink('footer-ig-link', BRAND_CONFIG.instagramUrl);
+    updateLink('footer-threads-link', BRAND_CONFIG.threadsUrl);
+    updateLink('footer-line-link', BRAND_CONFIG.lineUrl);
 
     loadDataFromCSV();
     updateFavCountBadge();
