@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>商品選品 ｜ 哈拿的刺繡星球</title>
 
+  <!-- Favicon / 品牌圖示 -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <meta property="og:image" content="images/logo.png">
+
   <!-- Google Fonts: Plus Jakarta Sans & Noto Sans TC -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,6 +117,23 @@
       font-size: 24px;
       box-shadow: var(--shadow-sm);
       border: 1px solid #fae1d6;
+    }
+
+    .brand-logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(92, 64, 51, 0.12);
+      border: 1.5px solid #ebdcd3;
+      flex-shrink: 0;
+      background: #ffffff;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .brand-area:hover .brand-logo-img {
+      transform: scale(1.06);
+      box-shadow: 0 4px 12px rgba(92, 64, 51, 0.18);
     }
 
     .brand-text h1 {
@@ -675,6 +697,31 @@
       gap: 30px;
       align-items: center;
     }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .footer-logo-img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid #ebdcd3;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      flex-shrink: 0;
+      background: #ffffff;
+    }
+    .footer-brand h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2e2621;
+      margin-bottom: 4px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
     .footer-copy {
       width: 100%;
       text-align: center;
@@ -695,7 +742,7 @@
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand-area">
-        <div class="brand-logo-icon">🪐</div>
+        <img src="images/logo.png" alt="哈拿的刺繡星球 Logo" class="brand-logo-img">
         <div class="brand-text">
           <h1>哈拿的刺繡星球</h1>
           <p>手工刺繡・客製配件・追星選品</p>
@@ -786,9 +833,12 @@
 
   <footer class="site-footer">
     <div class="footer-content">
-      <div>
-        <h2>哈拿的刺繡星球</h2>
-        <p>用心勾勒每一次相遇 ✦ 手作刺繡・追星日常・客製禮物</p>
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="哈拿的刺繡星球 Logo" class="footer-logo-img">
+        <div>
+          <h2>哈拿的刺繡星球</h2>
+          <p>用心勾勒每一次相遇 ✦ 手作刺繡・追星日常・客製禮物</p>
+        </div>
       </div>
       <div class="footer-copy">
         © 2026 哈拿的刺繡星球. All rights reserved.

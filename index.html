@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>哈拿的刺繡星球 ｜ 手工刺繡・追星小物・客製配件</title>
 
+  <!-- Favicon / 品牌圖示 -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <meta property="og:image" content="images/logo.png">
+
   <!-- Google Fonts: Plus Jakarta Sans & Noto Sans TC -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,6 +108,23 @@
       font-size: 24px;
       box-shadow: var(--shadow-sm);
       border: 1px solid #fae1d6;
+    }
+
+    .brand-logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(92, 64, 51, 0.12);
+      border: 1.5px solid #ebdcd3;
+      flex-shrink: 0;
+      background: #ffffff;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .brand-area:hover .brand-logo-img {
+      transform: scale(1.06);
+      box-shadow: 0 4px 12px rgba(92, 64, 51, 0.18);
     }
 
     .brand-text h1 {
@@ -230,6 +252,28 @@
       font-size: 96px;
       opacity: 0.12;
       pointer-events: none;
+    }
+
+    .hero-logo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .hero-logo-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(92, 64, 51, 0.12);
+      border: 3.5px solid #ffffff;
+      background: #ffffff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-logo-img:hover {
+      transform: scale(1.06) rotate(3deg);
+      box-shadow: 0 12px 28px rgba(92, 64, 51, 0.18);
     }
 
     .hero-badge {
@@ -539,11 +583,28 @@
       align-items: center;
     }
 
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-logo-img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid #ebdcd3;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      flex-shrink: 0;
+      background: #ffffff;
+    }
+
     .footer-brand h2 {
       font-size: 18px;
       font-weight: 700;
       color: #2e2621;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .footer-brand p {
@@ -611,7 +672,7 @@
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand-area">
-        <div class="brand-logo-icon">🪐</div>
+        <img src="images/logo.png" alt="哈拿的刺繡星球 Logo" class="brand-logo-img">
         <div class="brand-text">
           <h1>哈拿的刺繡星球</h1>
           <p>手工刺繡・客製配件・追星選品</p>
@@ -645,6 +706,9 @@
   <main class="main-wrapper">
     <!-- 品牌緣起與主橫幅 -->
     <section class="hero-banner">
+      <div class="hero-logo-wrapper">
+        <img src="images/logo.png" alt="哈拿的刺繡星球 Logo" class="hero-logo-img">
+      </div>
       <span class="hero-badge">ABOUT HANA EMBROIDERY PLANET</span>
       <h2 class="hero-title">用溫暖針線，記錄日常心動的瞬間 🪐</h2>
       <p class="hero-intro">
@@ -758,8 +822,11 @@
   <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <h2>哈拿的刺繡星球</h2>
-        <p>用心勾勒每一次相遇 ✦ 手作刺繡・追星日常・客製禮物</p>
+        <img src="images/logo.png" alt="哈拿的刺繡星球 Logo" class="footer-logo-img">
+        <div>
+          <h2>哈拿的刺繡星球</h2>
+          <p>用心勾勒每一次相遇 ✦ 手作刺繡・追星日常・客製禮物</p>
+        </div>
       </div>
       <div class="footer-links">
         <a href="index.html" class="nav-link" style="padding: 4px 8px;">品牌介紹</a>
