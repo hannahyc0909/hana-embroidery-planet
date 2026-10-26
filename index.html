@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>哈拿的刺繡星球 ｜ 手工刺繡・追星小物・客製配件</title>
+  <title>哈拿的刺繡星球 ｜ 寵物小物・客製配件・追星選品</title>
 
   <!-- Favicon / 品牌圖示 -->
   <link rel="icon" type="image/png" href="images/logo.png">
@@ -108,8 +108,8 @@
     }
 
     .brand-logo-img {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 2px 8px rgba(92, 64, 51, 0.12);
@@ -227,10 +227,22 @@
       background: #dcfce7;
     }
 
-    .social-btn svg {
+    .social-btn.email {
+      background: #fef2f2;
+      color: #ea4335;
+      border-color: #fee2e2;
+    }
+    .social-btn.email:hover {
+      background: #fee2e2;
+    }
+
+    .social-btn svg,
+    .social-btn img {
       width: 15px;
       height: 15px;
       fill: currentColor;
+      object-fit: contain;
+      flex-shrink: 0;
     }
 
     /* 手機版頂部右側社群按鈕 */
@@ -252,7 +264,14 @@
       flex-shrink: 0;
     }
     .mob-social-btn:hover { transform: scale(1.08); }
-    .mob-social-btn svg { width: 16px; height: 16px; fill: currentColor; }
+    .mob-social-btn svg,
+    .mob-social-btn img {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
 
     .mob-social-btn.ig {
       background: #fdf2f4;
@@ -268,6 +287,11 @@
       background: #f0fdf4;
       color: #16a34a;
       border-color: #dcfce7;
+    }
+    .mob-social-btn.email {
+      background: #fef2f2;
+      color: #ea4335;
+      border-color: #fee2e2;
     }
 
     /* 手機版次級分頁導覽列 (Sticky tabs) */
@@ -324,16 +348,6 @@
       overflow: hidden;
     }
 
-    .hero-banner::after {
-      content: '🧵';
-      position: absolute;
-      right: 24px;
-      bottom: -15px;
-      font-size: 96px;
-      opacity: 0.12;
-      pointer-events: none;
-    }
-
     .hero-logo-wrapper {
       display: flex;
       justify-content: center;
@@ -341,8 +355,8 @@
     }
 
     .hero-logo-img {
-      width: 110px;
-      height: 110px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 8px 24px rgba(92, 64, 51, 0.12);
@@ -372,7 +386,7 @@
       font-size: 32px;
       font-weight: 800;
       color: #2e2621;
-      margin-bottom: 16px;
+      margin-bottom: 0;
       line-height: 1.3;
     }
 
@@ -441,7 +455,7 @@
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 26px 22px;
+      padding: 26px 20px;
       text-align: center;
       box-shadow: var(--shadow-sm);
       transition: transform 0.2s ease;
@@ -451,17 +465,46 @@
       transform: translateY(-3px);
     }
 
+    .announcement-icon {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      vertical-align: -2px;
+      margin-right: 4px;
+      display: inline-block;
+    }
+
+    .feature-icon-wrapper {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .feature-icon-img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .feature-card:hover .feature-icon-img {
+      transform: scale(1.1);
+    }
+
     .feature-icon {
       font-size: 34px;
-      margin-bottom: 12px;
       display: inline-block;
+      line-height: 1;
     }
 
     .feature-title {
       font-size: 16px;
       font-weight: 700;
       color: #2e2621;
-      margin-bottom: 8px;
+      margin-bottom: 0;
     }
 
     .feature-desc {
@@ -480,6 +523,57 @@
       box-shadow: var(--shadow-sm);
     }
 
+    .title-inline-icon {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .flow-icons-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .flow-step-icon {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .btn-inline-icon {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      vertical-align: middle;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .btn-icon-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    }
+    .btn-icon-badge img {
+      width: 15px;
+      height: 15px;
+      object-fit: contain;
+      display: block;
+    }
+
     .section-title {
       font-size: 21px;
       font-weight: 700;
@@ -490,6 +584,58 @@
       gap: 10px;
       padding-bottom: 12px;
       border-bottom: 1px solid #f2ede6;
+    }
+
+    /* 流程 Tabs 切換按鈕 */
+    .flow-tabs {
+      display: inline-flex;
+      background: #f5f1eb;
+      padding: 4px;
+      border-radius: 24px;
+      gap: 4px;
+      margin-bottom: 24px;
+      border: 1px solid #ebdcd0;
+    }
+
+    .flow-tab-btn {
+      border: none;
+      background: transparent;
+      padding: 8px 22px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #7a6e65;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+    }
+
+    .flow-tab-btn:hover {
+      color: #2e2621;
+    }
+
+    .flow-tab-btn.active {
+      background: #ffffff;
+      color: #2e2621;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .flow-tab-content {
+      animation: flowFadeIn 0.25s ease;
+    }
+
+    @keyframes flowFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* 4 步驟流程 */
@@ -523,6 +669,31 @@
       flex-shrink: 0;
     }
 
+    .step-flow-img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      flex-shrink: 0;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .step-item:hover .step-flow-img {
+      transform: scale(1.08);
+    }
+
+    .step-item.step-item-compact {
+      align-items: center;
+      padding: 14px 20px;
+    }
+
+    .step-title-standalone {
+      font-size: 16px;
+      font-weight: 700;
+      color: #2e2621;
+      margin-bottom: 0 !important;
+    }
+
     .step-info h3 {
       font-size: 15px;
       font-weight: 700;
@@ -531,6 +702,21 @@
     }
 
     .step-info p {
+      font-size: 13px;
+      color: #61564f;
+      line-height: 1.6;
+    }
+
+    .step-bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .step-bullet-list li {
       font-size: 13px;
       color: #61564f;
       line-height: 1.6;
@@ -703,8 +889,8 @@
       }
 
       .brand-logo-img {
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 40px;
       }
 
       .brand-text h1 {
@@ -726,17 +912,10 @@
         border-radius: 16px;
       }
 
-      .hero-banner::after {
-        font-size: 64px;
-        right: 8px;
-        bottom: -8px;
-        opacity: 0.08;
-      }
-
       .hero-logo-img {
-        width: 76px;
-        height: 76px;
-        border-width: 2.5px;
+        width: 96px;
+        height: 96px;
+        border-width: 3px;
       }
 
       .hero-badge {
@@ -748,7 +927,7 @@
       .hero-title {
         font-size: 19px;
         line-height: 1.35;
-        margin-bottom: 12px;
+        margin-bottom: 0;
       }
 
       .hero-intro {
@@ -781,14 +960,23 @@
         padding: 18px 14px;
       }
 
+      .feature-icon-wrapper {
+        height: 40px;
+        margin-bottom: 8px;
+      }
+
+      .feature-icon-img {
+        width: 38px;
+        height: 38px;
+      }
+
       .feature-icon {
         font-size: 26px;
-        margin-bottom: 8px;
       }
 
       .feature-title {
         font-size: 15px;
-        margin-bottom: 4px;
+        margin-bottom: 0;
       }
 
       .feature-desc {
@@ -808,6 +996,33 @@
         padding-bottom: 10px;
       }
 
+      .title-inline-icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      .flow-icons-row {
+        gap: 2px;
+      }
+
+      .flow-step-icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      .flow-tabs {
+        width: 100%;
+        display: flex;
+        margin-bottom: 16px;
+      }
+
+      .flow-tab-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 8px 12px;
+        font-size: 13.5px;
+      }
+
       .steps-container {
         gap: 10px;
       }
@@ -817,10 +1032,19 @@
         gap: 10px;
       }
 
+      .step-item.step-item-compact {
+        padding: 10px 12px;
+      }
+
       .step-num {
         width: 26px;
         height: 26px;
         font-size: 12px;
+      }
+
+      .step-flow-img {
+        width: 36px;
+        height: 36px;
       }
 
       .step-info h3 {
@@ -829,6 +1053,11 @@
       }
 
       .step-info p {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .step-bullet-list li {
         font-size: 12px;
         line-height: 1.5;
       }
@@ -901,7 +1130,7 @@
 
   <!-- 公告小跑馬燈 -->
   <div class="announcement-bar">
-    🧵 每一針都是用心手作・追星小物與客製刺繡選品｜歡迎私訊小盒子訂購與詢價 ✨
+    <img src="icon/刺繡.PNG" alt="手作刺繡" class="announcement-icon"> 全館滿 $1,500 即享免運費 ｜ 寵物小物・客製配件・追星選品 ｜ 歡迎私訊訂購
   </div>
 
   <!-- 頂部導覽列 -->
@@ -911,7 +1140,7 @@
         <img src="images/logo.png" alt="哈拿的刺繡星球 Logo" class="brand-logo-img">
         <div class="brand-text">
           <h1>哈拿的刺繡星球</h1>
-          <p>手工刺繡・客製配件・追星選品</p>
+          <p>寵物小物・客製配件・追星選品</p>
         </div>
       </div>
 
@@ -919,7 +1148,7 @@
       <div class="nav-right-group desktop-only">
 
         <a id="nav-ig-link" href="https://instagram.com/" target="_blank" class="social-btn ig" title="追蹤我們的 Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <img src="icon/instagram.svg" alt="Instagram">
           <span>Instagram</span>
         </a>
         <a id="nav-threads-link" href="https://www.threads.net/" target="_blank" class="social-btn threads" title="追蹤我們的 Threads">
@@ -927,21 +1156,28 @@
           <span>Threads</span>
         </a>
         <a id="nav-line-link" href="https://line.me/" target="_blank" class="social-btn line" title="加入 LINE 詢問">
-          <svg viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.019 9.608.391.084.922.258 1.057.592.121.303.079.777.039 1.085l-.171 1.026c-.053.303-.243 1.185 1.039.646 1.281-.539 6.918-4.077 9.444-6.982 1.745-1.921 2.573-3.874 2.573-5.975z"/></svg>
+          <img src="icon/line.svg" alt="LINE">
           <span>LINE 客服</span>
+        </a>
+        <a id="nav-email-link" href="mailto:hana.embroidery@gmail.com" class="social-btn email" title="發送 Gmail 詢問">
+          <img src="icon/gmail.svg" alt="Gmail">
+          <span>Gmail</span>
         </a>
       </div>
 
       <!-- 手機版頂部右側社群按鈕 -->
       <div class="mobile-header-social mobile-only">
         <a id="mob-nav-ig-link" href="https://instagram.com/" target="_blank" class="mob-social-btn ig" title="追蹤 Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <img src="icon/instagram.svg" alt="Instagram">
         </a>
         <a id="mob-nav-threads-link" href="https://www.threads.net/" target="_blank" class="mob-social-btn threads" title="追蹤 Threads">
           <svg viewBox="0 0 24 24"><path d="M18.263 11.097c-.03-3.486-1.92-5.586-5.111-5.586-2.13 0-3.922.963-4.863 2.499l2.062 1.438c.535-.843 1.272-1.543 2.628-1.543 1.528 0 2.318.85 2.544 2.431a15 15 0 0 0-2.236-.173c-4.125 0-6.068 1.867-6.068 4.336s1.943 3.99 4.804 3.99c3.139 0 5.013-2.115 5.781-4.735.798.361 1.348 1.204 1.348 2.47 0 3.387-3.907 5.232-7.22 5.232-4.885 0-8.077-3.207-8.077-8.424 0-6.392 4.223-10.487 9.9-10.487 3.808 0 5.69 1.671 6.97 3.914l2.108-1.475C21.44 2.078 18.331 0 13.663 0 6.227 0 1.168 5.277 1.168 12.934c0 7 4.953 11.066 10.856 11.066 4.878 0 9.809-2.846 9.809-7.716 0-2.545-1.46-4.231-3.569-5.187m-6.33 4.855c-1.077 0-2.026-.512-2.026-1.453 0-1.483 1.822-1.934 3.606-1.934.678 0 1.34.045 1.927.173-.422 1.927-1.671 3.215-3.508 3.214Z"/></svg>
         </a>
         <a id="mob-nav-line-link" href="https://line.me/" target="_blank" class="mob-social-btn line" title="加入 LINE 詢問">
-          <svg viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.019 9.608.391.084.922.258 1.057.592.121.303.079.777.039 1.085l-.171 1.026c-.053.303-.243 1.185 1.039.646 1.281-.539 6.918-4.077 9.444-6.982 1.745-1.921 2.573-3.874 2.573-5.975z"/></svg>
+          <img src="icon/line.svg" alt="LINE">
+        </a>
+        <a id="mob-nav-email-link" href="mailto:hana.embroidery@gmail.com" class="mob-social-btn email" title="發送 Gmail 詢問">
+          <img src="icon/gmail.svg" alt="Gmail">
         </a>
       </div>
     </div>
@@ -954,72 +1190,101 @@
       <div class="hero-logo-wrapper">
         <img src="images/logo.png" alt="哈拿的刺繡星球 Logo" class="hero-logo-img">
       </div>
-      <span class="hero-badge">ABOUT HANA EMBROIDERY PLANET</span>
-      <h2 class="hero-title">用溫暖針線，記錄日常心動的瞬間 🪐</h2>
-      <p class="hero-intro">
-        歡迎來到 <strong>哈拿的刺繡星球</strong>。<br>
-        我們專注於溫暖手作刺繡與追星生活小物，包含精緻刺繡徽章、客製名畫吊飾、隨身小卡套與質感書衣。<br>
-        每一件作品都凝聚著細膩針線與手作溫度，希望能為您的日常生活或喜愛的偶像應援增添一份獨一無二的專屬心意。
-      </p>
-      <div class="hero-action-btns">
-        <a id="hero-ig-link" href="https://instagram.com/" target="_blank" class="hero-btn-primary">
-          <span>📷 追蹤 Instagram 實拍作品</span>
-        </a>
-        <a id="hero-line-link" href="https://line.me/" target="_blank" class="hero-btn-secondary">
-          <span>💬 私訊 LINE 討論客製</span>
-        </a>
-      </div>
+      <span class="hero-badge">HANA EMBROIDERY PLANET</span>
+      <h2 class="hero-title">用溫暖針線，記錄日常心動的瞬間</h2>
     </section>
 
     <!-- 品牌三大特色 -->
     <section class="features-grid">
       <div class="feature-card">
-        <span class="feature-icon">🧵</span>
-        <h3 class="feature-title">細膩手作工藝</h3>
-        <p class="feature-desc">一針一線細心刺繡，細緻呈現紋理與手感，擁有印刷品無可比擬的立體質感與溫度。</p>
+        <div class="feature-icon-wrapper">
+          <img src="icon/刺繡.PNG" alt="電腦刺繡" class="feature-icon-img">
+        </div>
+        <h3 class="feature-title">電腦刺繡</h3>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">✨</span>
-        <h3 class="feature-title">專屬客製服務</h3>
-        <p class="feature-desc">支援私訊溝通款式、文字與特殊配色，為自己、寵物或喜愛的本命偶像打造獨特心意禮物。</p>
+        <div class="feature-icon-wrapper">
+          <img src="icon/客製化.PNG" alt="毛孩與追星訂製" class="feature-icon-img">
+        </div>
+        <h3 class="feature-title">毛孩與追星訂製</h3>
       </div>
       <div class="feature-card">
-        <span class="feature-icon">🎁</span>
-        <h3 class="feature-title">用心嚴選材質</h3>
-        <p class="feature-desc">精選親膚耐久布料、厚實配件與耐磨五金，讓手作作品長久陪伴您的美好日常時光。</p>
+        <div class="feature-icon-wrapper">
+          <img src="icon/清單.PNG" alt="用心嚴選製作" class="feature-icon-img">
+        </div>
+        <h3 class="feature-title">用心嚴選製作</h3>
       </div>
     </section>
 
     <!-- 訂購與客製 4 步驟 -->
     <section class="section-block">
-      <h2 class="section-title">📋 訂購與客製流程</h2>
-      <div class="steps-container">
-        <div class="step-item">
-          <div class="step-num">1</div>
-          <div class="step-info">
-            <h3>挑選商品或提供客製想法</h3>
-            <p>在「商品選品」專區中截圖喜歡的現貨款式；若需客製，可準備喜歡的圖案、照片或配色想法。</p>
+      <h2 class="section-title"><img src="icon/清單.PNG" class="title-inline-icon" alt="訂購與客製流程"> 訂購與客製流程</h2>
+      <!-- 流程分頁切換 Tabs -->
+      <div class="flow-tabs" role="tablist" aria-label="訂購流程切換">
+        <button class="flow-tab-btn active" onclick="switchFlowTab('standard')" id="tab-btn-standard" role="tab" aria-selected="true" aria-controls="flow-panel-standard">
+          現貨商品
+        </button>
+        <button class="flow-tab-btn" onclick="switchFlowTab('custom')" id="tab-btn-custom" role="tab" aria-selected="false" aria-controls="flow-panel-custom">
+          客製化商品
+        </button>
+      </div>
+
+      <!-- 現貨商品流程 -->
+      <div class="flow-tab-content" id="flow-panel-standard" role="tabpanel" aria-labelledby="tab-btn-standard">
+        <div class="steps-container">
+          <div class="step-item step-item-compact">
+            <img src="icon/現貨流程-1.PNG" alt="1. 挑選喜愛的現貨款式" class="step-flow-img">
+            <div class="step-info">
+              <h3 class="step-title-standalone">1. 挑選喜愛的現貨款式</h3>
+            </div>
+          </div>
+          <div class="step-item step-item-compact">
+            <img src="icon/現貨流程-2.PNG" alt="2. 私訊確認現貨" class="step-flow-img">
+            <div class="step-info">
+              <h3 class="step-title-standalone">2. 私訊確認現貨</h3>
+            </div>
+          </div>
+          <div class="step-item step-item-compact">
+            <img src="icon/現貨流程-3.PNG" alt="3. 確認訂單與完成付款" class="step-flow-img">
+            <div class="step-info">
+              <h3 class="step-title-standalone">3. 確認訂單與完成付款</h3>
+            </div>
+          </div>
+          <div class="step-item step-item-compact">
+            <img src="icon/現貨流程-4.PNG" alt="4. 防撞包裝與快速寄出" class="step-flow-img">
+            <div class="step-info">
+              <h3 class="step-title-standalone">4. 防撞包裝與快速寄出</h3>
+            </div>
           </div>
         </div>
-        <div class="step-item">
-          <div class="step-num">2</div>
-          <div class="step-info">
-            <h3>私訊 Instagram、Threads 或 LINE 小盒子</h3>
-            <p>將截圖或需求傳送給我們，店長會親自為您確認尺寸、配件細節，並提供明確報價與預計製作時間。</p>
+      </div>
+
+      <!-- 客製化商品流程 -->
+      <div class="flow-tab-content" id="flow-panel-custom" role="tabpanel" aria-labelledby="tab-btn-custom" style="display: none;">
+        <div class="steps-container">
+          <div class="step-item step-item-compact">
+            <img src="icon/客製化流程-1.PNG" alt="1. 需求確認" class="step-flow-img">
+            <div class="step-info">
+              <h3 class="step-title-standalone">1. 需求確認</h3>
+            </div>
           </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">3</div>
-          <div class="step-info">
-            <h3>確認訂單與排單製作</h3>
-            <p>確認款項後即正式進入排單製作。手作商品需一定工時細心雕琢，敬請耐心等候美好成果！</p>
+          <div class="step-item step-item-compact">
+            <img src="icon/客製化流程-2.PNG" alt="2. 確認報價" class="step-flow-img">
+            <div class="step-info">
+              <h3 class="step-title-standalone">2. 確認報價</h3>
+            </div>
           </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">4</div>
-          <div class="step-info">
-            <h3>拍照確認成品與細心寄出</h3>
-            <p>作品完工後，店長會先拍攝成品照片與您確認，隨後進行防撞包裝並儘速寄出至您指定的取件門市。</p>
+          <div class="step-item step-item-compact">
+            <img src="icon/客製化流程-3.PNG" alt="3. 開始製作" class="step-flow-img">
+            <div class="step-info">
+              <h3 class="step-title-standalone">3. 開始製作</h3>
+            </div>
+          </div>
+          <div class="step-item step-item-compact">
+            <img src="icon/客製化流程-4.PNG" alt="4. 包裝與出貨" class="step-flow-img">
+            <div class="step-info">
+              <h3 class="step-title-standalone">4. 包裝與出貨</h3>
+            </div>
           </div>
         </div>
       </div>
@@ -1027,7 +1292,7 @@
 
     <!-- 訂購須知與常見問題 -->
     <section class="section-block">
-      <h2 class="section-title">💡 訂購須知與常見問題 (FAQ)</h2>
+      <h2 class="section-title"><img src="icon/常見問題.PNG" class="title-inline-icon" alt="常見問題"> 訂購須知與常見問題 (FAQ)</h2>
       <div class="faq-list">
         <div class="faq-item">
           <div class="faq-q">手作製作時間需要多久？</div>
@@ -1035,30 +1300,12 @@
         </div>
         <div class="faq-item">
           <div class="faq-q">手作商品會有色差或微小差異嗎？</div>
-          <div class="faq-a">手工刺繡每件作品的針法、手感皆獨一無二，不同螢幕顯示器可能有些微色差，微小手作痕跡正是手作溫暖的迷人之處。</div>
+          <div class="faq-a">客製刺繡每件作品的針法、手感皆獨一無二，不同螢幕顯示器可能有些微色差。</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">刺繡商品該如何清潔與保養？</div>
-          <div class="faq-a">建議使用常溫水搭配中性清潔劑輕柔局部手洗，避免用力搓揉刺繡線條或高溫烘乾，陰乾即可保持平整美觀。</div>
+          <div class="faq-q">支援哪些付款與配送方式？運費如何計算？</div>
+          <div class="faq-a">目前支援銀行轉帳；配送支援 7-11 賣貨便寄送。<strong>全館單筆消費滿 NT$1,500 即享免運費優惠！</strong></div>
         </div>
-        <div class="faq-item">
-          <div class="faq-q">支援哪些付款與配送方式？</div>
-          <div class="faq-a">目前支援銀行轉帳 / LINE Pay；配送支援 7-11、全家超商取貨或郵局掛號寄送。</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 底部行動呼籲 -->
-    <section class="cta-banner">
-      <h2>心動了嗎？歡迎前往選品或私訊聊聊 ✨</h2>
-      <p>挑選心儀的現貨小物，或與店長討論獨一無二的客製化刺繡訂製！</p>
-      <div class="cta-btns">
-        <a id="cta-ig-link" href="https://instagram.com/" target="_blank" class="btn-cta-white">
-          <span>📷 私訊 Instagram 小盒子</span>
-        </a>
-        <a id="cta-line-link" href="https://line.me/" target="_blank" class="btn-cta-ghost">
-          <span>💬 加入 LINE 客服詢價</span>
-        </a>
       </div>
     </section>
   </main>
@@ -1068,7 +1315,7 @@
     <div class="footer-content">
       <div class="footer-social-links">
         <a id="footer-ig-link" href="https://instagram.com/" target="_blank" class="social-btn ig" title="追蹤 Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <img src="icon/instagram.svg" alt="Instagram">
           <span>Instagram</span>
         </a>
         <a id="footer-threads-link" href="https://www.threads.net/" target="_blank" class="social-btn threads" title="追蹤 Threads">
@@ -1076,8 +1323,12 @@
           <span>Threads</span>
         </a>
         <a id="footer-line-link" href="https://line.me/" target="_blank" class="social-btn line" title="加入 LINE 詢問">
-          <svg viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.019 9.608.391.084.922.258 1.057.592.121.303.079.777.039 1.085l-.171 1.026c-.053.303-.243 1.185 1.039.646 1.281-.539 6.918-4.077 9.444-6.982 1.745-1.921 2.573-3.874 2.573-5.975z"/></svg>
+          <img src="icon/line.svg" alt="LINE">
           <span>LINE 客服</span>
+        </a>
+        <a id="footer-email-link" href="mailto:hana.embroidery@gmail.com" class="social-btn email" title="發送 Gmail 詢問">
+          <img src="icon/gmail.svg" alt="Gmail">
+          <span>Gmail</span>
         </a>
       </div>
       <div class="footer-copy">
@@ -1090,10 +1341,11 @@
     // 品牌與社群基本設定 (請隨時替換為您的社群帳號)
     const BRAND_CONFIG = {
       brandName: "哈拿的刺繡星球",
-      brandSubtitle: "手工刺繡・客製配件・追星選品",
+      brandSubtitle: "寵物小物・客製配件・追星選品",
       instagramUrl: "https://instagram.com/", // 請替換為您的 IG 帳號網址
       threadsUrl: "https://www.threads.net/",  // 請替換為您的 Threads 帳號網址
       lineUrl: "https://line.me/",            // 請替換為您的 LINE 官方帳號網址
+      email: "hana.embroidery@gmail.com",     // 請替換為您的 Gmail 信箱
     };
 
     const updateLink = (id, url) => {
@@ -1105,19 +1357,39 @@
     updateLink('nav-ig-link', BRAND_CONFIG.instagramUrl);
     updateLink('nav-threads-link', BRAND_CONFIG.threadsUrl);
     updateLink('nav-line-link', BRAND_CONFIG.lineUrl);
+    updateLink('nav-email-link', `mailto:${BRAND_CONFIG.email}`);
 
     updateLink('mob-nav-ig-link', BRAND_CONFIG.instagramUrl);
     updateLink('mob-nav-threads-link', BRAND_CONFIG.threadsUrl);
     updateLink('mob-nav-line-link', BRAND_CONFIG.lineUrl);
+    updateLink('mob-nav-email-link', `mailto:${BRAND_CONFIG.email}`);
 
     updateLink('footer-ig-link', BRAND_CONFIG.instagramUrl);
     updateLink('footer-threads-link', BRAND_CONFIG.threadsUrl);
     updateLink('footer-line-link', BRAND_CONFIG.lineUrl);
+    updateLink('footer-email-link', `mailto:${BRAND_CONFIG.email}`);
 
-    updateLink('hero-ig-link', BRAND_CONFIG.instagramUrl);
-    updateLink('hero-line-link', BRAND_CONFIG.lineUrl);
-    updateLink('cta-ig-link', BRAND_CONFIG.instagramUrl);
-    updateLink('cta-line-link', BRAND_CONFIG.lineUrl);
+    // 流程分頁切換 Tabs
+    window.switchFlowTab = function(type) {
+      const isStandard = type === 'standard';
+      const btnStandard = document.getElementById('tab-btn-standard');
+      const btnCustom = document.getElementById('tab-btn-custom');
+      const panelStandard = document.getElementById('flow-panel-standard');
+      const panelCustom = document.getElementById('flow-panel-custom');
+
+      if (btnStandard) {
+        btnStandard.classList.toggle('active', isStandard);
+        btnStandard.setAttribute('aria-selected', isStandard ? 'true' : 'false');
+      }
+      if (btnCustom) {
+        btnCustom.classList.toggle('active', !isStandard);
+        btnCustom.setAttribute('aria-selected', !isStandard ? 'true' : 'false');
+      }
+      if (panelStandard && panelCustom) {
+        panelStandard.style.display = isStandard ? 'block' : 'none';
+        panelCustom.style.display = isStandard ? 'none' : 'block';
+      }
+    };
   </script>
 </body>
 </html>
